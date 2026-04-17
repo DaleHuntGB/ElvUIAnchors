@@ -45,6 +45,7 @@ function AddOn:OnInitialize()
 end
 
 function AddOn:OnEnable()
+    Private:SetupConfig()
     local EventFrame = CreateFrame("Frame")
     EventFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
     EventFrame:RegisterEvent("PLAYER_SPECIALIZATION_CHANGED")

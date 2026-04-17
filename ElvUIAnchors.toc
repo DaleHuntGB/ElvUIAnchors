@@ -9,4 +9,5 @@
 ## RequiredDeps: ElvUI
 
 Constants.lua
+Config.lua
 Core.lua
