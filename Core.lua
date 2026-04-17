@@ -5,7 +5,7 @@ function AddOn:OnInitialize()
     Private.DB = LibStub("AceDB-3.0"):New("ElvUIAnchorsDB", {
         global = {
             Player = {
-                Enabled = true,
+                Enabled = false,
                 Layout = {"RIGHT", "EssentialCooldownViewer", "LEFT", -10, 0}
             },
             PlayerCastBar = {
@@ -13,7 +13,7 @@ function AddOn:OnInitialize()
                 Layout = {"CENTER", "ElvUIParent", "CENTER", 0, 0}
             },
             Target = {
-                Enabled = true,
+                Enabled = false,
                 Layout = {"LEFT", "EssentialCooldownViewer", "RIGHT", 10, 0}
             },
             TargetCastBar = {
