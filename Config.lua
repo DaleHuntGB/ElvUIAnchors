@@ -4,10 +4,7 @@ local ACR = Private.E.Libs.AceConfigRegistry
 
 local function BuildFrameLayoutSection(FrameDB, MoverName, GroupName, TabOrder)
     local Section = ACH:Group(GroupName, nil, TabOrder, "tab")
-
-    local function IsDisabled()
-        return not FrameDB.Enabled
-    end
+    local function IsDisabled() return not FrameDB.Enabled end
 
     local function UpdateLayout()
         Private:UpdateMovers(FrameDB.Enabled, MoverName, table.concat(FrameDB.Layout, ","))
