@@ -5,8 +5,10 @@
 ## SavedVariables: ElvUIEnhancedAnchorsDB
 ## Category-enUS: UI Overhaul
 ## Group: ElvUI
-## IconAtlas: BonusChest-Lock
+## IconTexture: Interface\AddOns\ElvUIEnhancedAnchors\Media\ElvUIEnhancedAnchors.png
 ## RequiredDeps: ElvUI
+## X-Curse-Project-ID: 1516885
+## X-Wago-ID: nKW3voKE
 
 Libs/Ace3/AceAddon-3.0/AceAddon-3.0.xml
 Libs/Ace3/AceConfig-3.0/AceConfig-3.0.xml
