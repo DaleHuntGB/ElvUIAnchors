@@ -1,8 +1,8 @@
-## Title: |cff1784d1ElvUI|r|cFFFFFFFFAnchors|r
+## Title: |cff1784d1ElvUI|r|cFF8080FFEnhanced|r|cFFFFFFFFAnchors|r
 ## Version: @project-version@
 ## Author: |cFF4080FFUnhalted|r
 ## Interface: 120001
-## SavedVariables: ElvUIAnchorsDB
+## SavedVariables: ElvUIEnhancedAnchorsDB
 ## Category-enUS: UI Overhaul
 ## Group: ElvUI
 ## IconAtlas: BonusChest-Lock

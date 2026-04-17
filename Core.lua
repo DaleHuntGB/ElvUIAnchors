@@ -1,8 +1,8 @@
 local Private = select(2, ...)
-local AddOn = LibStub("AceAddon-3.0"):NewAddon("ElvUIAnchors")
+local AddOn = LibStub("AceAddon-3.0"):NewAddon("ElvUIEnhancedAnchors")
 
 function AddOn:OnInitialize()
-    Private.DB = LibStub("AceDB-3.0"):New("ElvUIAnchorsDB", Private:GetDefaults(), true)
+    Private.DB = LibStub("AceDB-3.0"):New("ElvUIEnhancedAnchorsDB", Private:GetDefaults(), true)
 end
 
 function AddOn:OnEnable()

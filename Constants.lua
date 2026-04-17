@@ -1,7 +1,7 @@
 local Private = select(2, ...)
 Private.E = unpack(ElvUI)
 Private.ACH = LibStub("LibAceConfigHelper")
-Private.ADDON_NAME = C_AddOns.GetAddOnMetadata("ElvUIAnchors", "Title")
+Private.ADDON_NAME = C_AddOns.GetAddOnMetadata("ElvUIEnhancedAnchors", "Title")
 
 local Defaults = {
     global = {
@@ -87,45 +87,4 @@ function Private:UpdateMovers(isEnabled, moverName, moverLayout)
         Private.E:SaveMoverPosition(moverName)
     end
     Private.E:LoadMovers()
-end
-
-function Private:CreatePopup(isExporting)
-    StaticPopupDialogs["FRAGUI_PROFILE_TRANSFER"] = {
-        text = isExporting and "Export Profile" or "Import Profile",
-        button1 = isExporting and "Close" or "Import",
-        button2 = "Cancel",
-        hasEditBox = true,
-        editBoxWidth = 350,
-        timeout = 0,
-        whileDead = true,
-        hideOnEscape = true,
-        preferredIndex = 3,
-
-        OnShow = function(self)
-            if isExporting then
-                local exportString = Private:ExportProfile(Private.DB.global)
-                self.EditBox:SetText(exportString)
-                self.EditBox:HighlightText()
-            else
-                self.EditBox:SetText("")
-                self.EditBox:SetFocus()
-            end
-        end,
-
-        OnAccept = function(self)
-            if not isExporting then
-                local text = self.EditBox:GetText()
-                if text and text ~= "" then
-                    local importedData = Private:ImportProfile(text)
-                    if importedData then
-                        Private.DB.global = importedData
-                        Private:UpdateAllMovers()
-                    end
-                end
-            end
-        end,
-        EditBoxOnEnterPressed = function(self) self:GetParent().button1:Click() end,
-    }
-
-    StaticPopup_Show("FRAGUI_PROFILE_TRANSFER")
 end
