@@ -27,6 +27,8 @@ end
 function Private:SetupConfig()
 	Private.Config = ACH:Group(format("%s", Private.ADDON_NAME), nil, 20, "tree")
 
+    Private.Config.args.Description = ACH:Description(Private.ADDON_NAME .. " is not affiliated with |cff1784d1ElvUI|r.\n\n" .. Private.ADDON_NAME .. " will update the |cff1784d1ElvUI|r movers and save these to the same profile as your current |cff1784d1ElvUI|r Profile.\n\n", 0)
+
     Private.Config.args.Player = BuildFrameLayoutSection(Private.DB.global.Player, "ElvUF_PlayerMover", "Player Frame", 1)
     Private.Config.args.PlayerCastBar = BuildFrameLayoutSection(Private.DB.global.PlayerCastBar, "ElvUF_PlayerCastbarMover", "Player Cast Bar", 2)
     Private.Config.args.Target = BuildFrameLayoutSection(Private.DB.global.Target, "ElvUF_TargetMover", "Target Frame", 3)
