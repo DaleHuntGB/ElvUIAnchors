@@ -88,3 +88,20 @@ function Private:UpdateMovers(isEnabled, moverName, moverLayout)
     end
     Private.E:LoadMovers()
 end
+
+function Private:SetAllMovers()
+    Private:SetMovers(Private.DB.global.Player.Enabled, "ElvUF_PlayerMover", table.concat(Private.DB.global.Player.Layout, ","))
+    Private:SetMovers(Private.DB.global.PlayerCastBar.Enabled, "ElvUF_PlayerCastbarMover", table.concat(Private.DB.global.PlayerCastBar.Layout, ","))
+    Private:SetMovers(Private.DB.global.Target.Enabled, "ElvUF_TargetMover", table.concat(Private.DB.global.Target.Layout, ","))
+    Private:SetMovers(Private.DB.global.TargetCastBar.Enabled, "ElvUF_TargetCastbarMover", table.concat(Private.DB.global.TargetCastBar.Layout, ","))
+    Private:SetMovers(Private.DB.global.TargetTarget.Enabled, "ElvUF_TargetTargetMover", table.concat(Private.DB.global.TargetTarget.Layout, ","))
+    Private:SetMovers(Private.DB.global.Focus.Enabled, "ElvUF_FocusMover", table.concat(Private.DB.global.Focus.Layout, ","))
+    Private:SetMovers(Private.DB.global.FocusCastBar.Enabled, "ElvUF_FocusCastbarMover", table.concat(Private.DB.global.FocusCastBar.Layout, ","))
+    Private:SetMovers(Private.DB.global.FocusTarget.Enabled, "ElvUF_FocusTargetMover", table.concat(Private.DB.global.FocusTarget.Layout, ","))
+    Private:SetMovers(Private.DB.global.Pet.Enabled, "ElvUF_PetMover", table.concat(Private.DB.global.Pet.Layout, ","))
+    Private.E:LoadMovers()
+end
+
+function Private:PrettyPrint(MSG)
+    print(Private.ADDON_NAME .. ": " .. MSG)
+end
