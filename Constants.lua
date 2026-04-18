@@ -4,6 +4,30 @@ Private.ACH = LibStub("LibAceConfigHelper")
 Private.ACR = LibStub("AceConfigRegistry-3.0")
 Private.ADDON_NAME = C_AddOns.GetAddOnMetadata("ElvUIEnhancedAnchors", "Title")
 
+Private.ANCHOR_POINTS = {
+    ["TOPLEFT"] = "TOPLEFT",
+    ["TOP"] = "TOP",
+    ["TOPRIGHT"] = "TOPRIGHT",
+    ["LEFT"] = "LEFT",
+    ["CENTER"] = "CENTER",
+    ["RIGHT"] = "RIGHT",
+    ["BOTTOMLEFT"] = "BOTTOMLEFT",
+    ["BOTTOM"] = "BOTTOM",
+    ["BOTTOMRIGHT"] = "BOTTOMRIGHT"
+}
+
+Private.MOVERS = {
+    ["ElvUF_PlayerMover"] = "Player",
+    ["ElvUF_PlayerCastbarMover"] = "PlayerCastBar",
+    ["ElvUF_TargetMover"] = "Target",
+    ["ElvUF_TargetCastbarMover"] = "TargetCastBar",
+    ["ElvUF_TargetTargetMover"] = "TargetTarget",
+    ["ElvUF_FocusMover"] = "Focus",
+    ["ElvUF_FocusCastbarMover"] = "FocusCastBar",
+    ["ElvUF_FocusTargetMover"] = "FocusTarget",
+    ["ElvUF_PetMover"] = "Pet"
+}
+
 local Defaults = {
     global = {
         Player = {
@@ -48,30 +72,6 @@ local Defaults = {
 function Private:GetDefaults()
     return Defaults
 end
-
-Private.ANCHOR_POINTS = {
-    ["TOPLEFT"] = "TOPLEFT",
-    ["TOP"] = "TOP",
-    ["TOPRIGHT"] = "TOPRIGHT",
-    ["LEFT"] = "LEFT",
-    ["CENTER"] = "CENTER",
-    ["RIGHT"] = "RIGHT",
-    ["BOTTOMLEFT"] = "BOTTOMLEFT",
-    ["BOTTOM"] = "BOTTOM",
-    ["BOTTOMRIGHT"] = "BOTTOMRIGHT"
-}
-
-Private.MOVERS = {
-    ["ElvUF_PlayerMover"] = "Player",
-    ["ElvUF_PlayerCastbarMover"] = "PlayerCastBar",
-    ["ElvUF_TargetMover"] = "Target",
-    ["ElvUF_TargetCastbarMover"] = "TargetCastBar",
-    ["ElvUF_TargetTargetMover"] = "TargetTarget",
-    ["ElvUF_FocusMover"] = "Focus",
-    ["ElvUF_FocusCastbarMover"] = "FocusCastBar",
-    ["ElvUF_FocusTargetMover"] = "FocusTarget",
-    ["ElvUF_PetMover"] = "Pet"
-}
 
 function Private:SetMovers(isEnabled, moverName, moverLayout)
     if isEnabled and moverName and moverLayout then
