@@ -1,6 +1,6 @@
 local Private = select(2, ...)
 local ACH = Private.ACH
-local ACR = Private.E.Libs.AceConfigRegistry
+local ACR = Private.ACR
 
 local function BuildFrameLayoutSection(FrameDB, MoverName, GroupName, TabOrder)
     local Section = ACH:Group(GroupName, nil, TabOrder, nil)

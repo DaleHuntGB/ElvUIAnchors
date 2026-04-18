@@ -1,6 +1,7 @@
 local Private = select(2, ...)
 Private.E = unpack(ElvUI)
 Private.ACH = LibStub("LibAceConfigHelper")
+Private.ACR = LibStub("AceConfigRegistry-3.0")
 Private.ADDON_NAME = C_AddOns.GetAddOnMetadata("ElvUIEnhancedAnchors", "Title")
 
 local Defaults = {
