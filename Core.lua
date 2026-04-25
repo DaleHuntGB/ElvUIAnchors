@@ -8,10 +8,7 @@ end
 function AddOn:OnEnable()
     Private:SetupConfig()
 
-    if C_AddOns.IsAddOnLoaded("ElvUI_Anchor") then
-        Private.E:StaticPopup_Show("ANCHOR_CONFLICT")
-        return
-    end
+    if C_AddOns.IsAddOnLoaded("ElvUI_Anchor") then Private.E:StaticPopup_Show("ANCHOR_CONFLICT") return end
 
     local EventFrame = CreateFrame("Frame")
     EventFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -21,4 +18,5 @@ function AddOn:OnEnable()
 
     hooksecurefunc(Private.E, "ToggleMovers", function() Private:SetAllMovers() end)
 
+    C_Timer.After(1, function() Private:LoadSCMAnchors() end)
 end

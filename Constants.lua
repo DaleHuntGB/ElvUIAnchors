@@ -28,10 +28,10 @@ Private.MOVERS = {
     ["ElvUF_PetMover"] = "Pet"
 }
 
-local SUPPORTED_ANCHORS = {
+Private.SUPPORTED_ANCHORS = {
     ["EssentialCooldownViewer"] = "|TInterface\\AddOns\\ElvUIEnhancedAnchors\\Media\\Blizzard_Logo.png:16:16|t |cFF009AE4Essential|r Cooldown Viewer",
     ["UtilityCooldownViewer"] = "|TInterface\\AddOns\\ElvUIEnhancedAnchors\\Media\\Blizzard_Logo.png:16:16|t |cFF009AE4Utility|r Cooldown Viewer",
-    ["BuffIconCooldownViewer"] = "|TInterface\\AddOns\\ElvUIEnhancedAnchors\\Media\\Blizzard_Logo.png:16:16|t |cFF009AE4Buff Icon|r Cooldown Viewer",
+    ["BuffIconCooldownViewer"] = "|TInterface\\AddOns\\ElvUIEnhancedAnchors\\Media\\Blizzard_Logo.png:16:16|t |cFF009AE4Buff|r Cooldown Viewer",
     ["ElvUIParent"] = "|TInterface\\AddOns\\ElvUI\\Game\\Shared\\Media\\Textures\\LogoAddon:16:16|t |cff1784d1ElvUI|r Parent",
     ["ElvUF_Player"] = "|TInterface\\AddOns\\ElvUI\\Game\\Shared\\Media\\Textures\\LogoAddon:16:16|t |cff1784d1ElvUI|r Player",
     ["ElvUF_Target"] = "|TInterface\\AddOns\\ElvUI\\Game\\Shared\\Media\\Textures\\LogoAddon:16:16|t |cff1784d1ElvUI|r Target",
@@ -43,105 +43,105 @@ local SUPPORTED_ANCHORS = {
 
 Private.ANCHORS = {
     ["ElvUF_PlayerMover"] = {
-        ["EssentialCooldownViewer"] = SUPPORTED_ANCHORS["EssentialCooldownViewer"],
-        ["UtilityCooldownViewer"] = SUPPORTED_ANCHORS["UtilityCooldownViewer"],
-        ["BuffIconCooldownViewer"] = SUPPORTED_ANCHORS["BuffIconCooldownViewer"],
-        ["ElvUIParent"] = SUPPORTED_ANCHORS["ElvUIParent"],
-        ["ElvUF_Target"] = SUPPORTED_ANCHORS["ElvUF_Target"],
-        ["ElvUF_TargetTarget"] = SUPPORTED_ANCHORS["ElvUF_TargetTarget"],
-        ["ElvUF_Focus"] = SUPPORTED_ANCHORS["ElvUF_Focus"],
-        ["ElvUF_FocusTarget"] = SUPPORTED_ANCHORS["ElvUF_FocusTarget"],
-        ["ElvUF_Pet"] = SUPPORTED_ANCHORS["ElvUF_Pet"]
+        ["EssentialCooldownViewer"] = Private.SUPPORTED_ANCHORS["EssentialCooldownViewer"],
+        ["UtilityCooldownViewer"] = Private.SUPPORTED_ANCHORS["UtilityCooldownViewer"],
+        ["BuffIconCooldownViewer"] = Private.SUPPORTED_ANCHORS["BuffIconCooldownViewer"],
+        ["ElvUIParent"] = Private.SUPPORTED_ANCHORS["ElvUIParent"],
+        ["ElvUF_Target"] = Private.SUPPORTED_ANCHORS["ElvUF_Target"],
+        ["ElvUF_TargetTarget"] = Private.SUPPORTED_ANCHORS["ElvUF_TargetTarget"],
+        ["ElvUF_Focus"] = Private.SUPPORTED_ANCHORS["ElvUF_Focus"],
+        ["ElvUF_FocusTarget"] = Private.SUPPORTED_ANCHORS["ElvUF_FocusTarget"],
+        ["ElvUF_Pet"] = Private.SUPPORTED_ANCHORS["ElvUF_Pet"]
     },
     ["ElvUF_PlayerCastbarMover"] = {
-        ["EssentialCooldownViewer"] = SUPPORTED_ANCHORS["EssentialCooldownViewer"],
-        ["UtilityCooldownViewer"] = SUPPORTED_ANCHORS["UtilityCooldownViewer"],
-        ["BuffIconCooldownViewer"] = SUPPORTED_ANCHORS["BuffIconCooldownViewer"],
-        ["ElvUIParent"] = SUPPORTED_ANCHORS["ElvUIParent"],
-        ["ElvUF_Player"] = SUPPORTED_ANCHORS["ElvUF_Player"],
-        ["ElvUF_Target"] = SUPPORTED_ANCHORS["ElvUF_Target"],
-        ["ElvUF_TargetTarget"] = SUPPORTED_ANCHORS["ElvUF_TargetTarget"],
-        ["ElvUF_Focus"] = SUPPORTED_ANCHORS["ElvUF_Focus"],
-        ["ElvUF_FocusTarget"] = SUPPORTED_ANCHORS["ElvUF_FocusTarget"],
-        ["ElvUF_Pet"] = SUPPORTED_ANCHORS["ElvUF_Pet"]
+        ["EssentialCooldownViewer"] = Private.SUPPORTED_ANCHORS["EssentialCooldownViewer"],
+        ["UtilityCooldownViewer"] = Private.SUPPORTED_ANCHORS["UtilityCooldownViewer"],
+        ["BuffIconCooldownViewer"] = Private.SUPPORTED_ANCHORS["BuffIconCooldownViewer"],
+        ["ElvUIParent"] = Private.SUPPORTED_ANCHORS["ElvUIParent"],
+        ["ElvUF_Player"] = Private.SUPPORTED_ANCHORS["ElvUF_Player"],
+        ["ElvUF_Target"] = Private.SUPPORTED_ANCHORS["ElvUF_Target"],
+        ["ElvUF_TargetTarget"] = Private.SUPPORTED_ANCHORS["ElvUF_TargetTarget"],
+        ["ElvUF_Focus"] = Private.SUPPORTED_ANCHORS["ElvUF_Focus"],
+        ["ElvUF_FocusTarget"] = Private.SUPPORTED_ANCHORS["ElvUF_FocusTarget"],
+        ["ElvUF_Pet"] = Private.SUPPORTED_ANCHORS["ElvUF_Pet"]
     },
     ["ElvUF_TargetMover"] = {
-        ["EssentialCooldownViewer"] = SUPPORTED_ANCHORS["EssentialCooldownViewer"],
-        ["UtilityCooldownViewer"] = SUPPORTED_ANCHORS["UtilityCooldownViewer"],
-        ["BuffIconCooldownViewer"] = SUPPORTED_ANCHORS["BuffIconCooldownViewer"],
-        ["ElvUIParent"] = SUPPORTED_ANCHORS["ElvUIParent"],
-        ["ElvUF_Player"] = SUPPORTED_ANCHORS["ElvUF_Player"],
-        ["ElvUF_TargetTarget"] = SUPPORTED_ANCHORS["ElvUF_TargetTarget"],
-        ["ElvUF_Focus"] = SUPPORTED_ANCHORS["ElvUF_Focus"],
-        ["ElvUF_FocusTarget"] = SUPPORTED_ANCHORS["ElvUF_FocusTarget"],
-        ["ElvUF_Pet"] = SUPPORTED_ANCHORS["ElvUF_Pet"]
+        ["EssentialCooldownViewer"] = Private.SUPPORTED_ANCHORS["EssentialCooldownViewer"],
+        ["UtilityCooldownViewer"] = Private.SUPPORTED_ANCHORS["UtilityCooldownViewer"],
+        ["BuffIconCooldownViewer"] = Private.SUPPORTED_ANCHORS["BuffIconCooldownViewer"],
+        ["ElvUIParent"] = Private.SUPPORTED_ANCHORS["ElvUIParent"],
+        ["ElvUF_Player"] = Private.SUPPORTED_ANCHORS["ElvUF_Player"],
+        ["ElvUF_TargetTarget"] = Private.SUPPORTED_ANCHORS["ElvUF_TargetTarget"],
+        ["ElvUF_Focus"] = Private.SUPPORTED_ANCHORS["ElvUF_Focus"],
+        ["ElvUF_FocusTarget"] = Private.SUPPORTED_ANCHORS["ElvUF_FocusTarget"],
+        ["ElvUF_Pet"] = Private.SUPPORTED_ANCHORS["ElvUF_Pet"]
     },
     ["ElvUF_TargetCastbarMover"] = {
-        ["EssentialCooldownViewer"] = SUPPORTED_ANCHORS["EssentialCooldownViewer"],
-        ["UtilityCooldownViewer"] = SUPPORTED_ANCHORS["UtilityCooldownViewer"],
-        ["BuffIconCooldownViewer"] = SUPPORTED_ANCHORS["BuffIconCooldownViewer"],
-        ["ElvUIParent"] = SUPPORTED_ANCHORS["ElvUIParent"],
-        ["ElvUF_Player"] = SUPPORTED_ANCHORS["ElvUF_Player"],
-        ["ElvUF_Target"] = SUPPORTED_ANCHORS["ElvUF_Target"],
-        ["ElvUF_TargetTarget"] = SUPPORTED_ANCHORS["ElvUF_TargetTarget"],
-        ["ElvUF_Focus"] = SUPPORTED_ANCHORS["ElvUF_Focus"],
-        ["ElvUF_FocusTarget"] = SUPPORTED_ANCHORS["ElvUF_FocusTarget"],
-        ["ElvUF_Pet"] = SUPPORTED_ANCHORS["ElvUF_Pet"]
+        ["EssentialCooldownViewer"] = Private.SUPPORTED_ANCHORS["EssentialCooldownViewer"],
+        ["UtilityCooldownViewer"] = Private.SUPPORTED_ANCHORS["UtilityCooldownViewer"],
+        ["BuffIconCooldownViewer"] = Private.SUPPORTED_ANCHORS["BuffIconCooldownViewer"],
+        ["ElvUIParent"] = Private.SUPPORTED_ANCHORS["ElvUIParent"],
+        ["ElvUF_Player"] = Private.SUPPORTED_ANCHORS["ElvUF_Player"],
+        ["ElvUF_Target"] = Private.SUPPORTED_ANCHORS["ElvUF_Target"],
+        ["ElvUF_TargetTarget"] = Private.SUPPORTED_ANCHORS["ElvUF_TargetTarget"],
+        ["ElvUF_Focus"] = Private.SUPPORTED_ANCHORS["ElvUF_Focus"],
+        ["ElvUF_FocusTarget"] = Private.SUPPORTED_ANCHORS["ElvUF_FocusTarget"],
+        ["ElvUF_Pet"] = Private.SUPPORTED_ANCHORS["ElvUF_Pet"]
     },
     ["ElvUF_TargetTargetMover"] = {
-        ["EssentialCooldownViewer"] = SUPPORTED_ANCHORS["EssentialCooldownViewer"],
-        ["UtilityCooldownViewer"] = SUPPORTED_ANCHORS["UtilityCooldownViewer"],
-        ["BuffIconCooldownViewer"] = SUPPORTED_ANCHORS["BuffIconCooldownViewer"],
-        ["ElvUIParent"] = SUPPORTED_ANCHORS["ElvUIParent"],
-        ["ElvUF_Player"] = SUPPORTED_ANCHORS["ElvUF_Player"],
-        ["ElvUF_Target"] = SUPPORTED_ANCHORS["ElvUF_Target"],
-        ["ElvUF_Focus"] = SUPPORTED_ANCHORS["ElvUF_Focus"],
-        ["ElvUF_FocusTarget"] = SUPPORTED_ANCHORS["ElvUF_FocusTarget"],
-        ["ElvUF_Pet"] = SUPPORTED_ANCHORS["ElvUF_Pet"]
+        ["EssentialCooldownViewer"] = Private.SUPPORTED_ANCHORS["EssentialCooldownViewer"],
+        ["UtilityCooldownViewer"] = Private.SUPPORTED_ANCHORS["UtilityCooldownViewer"],
+        ["BuffIconCooldownViewer"] = Private.SUPPORTED_ANCHORS["BuffIconCooldownViewer"],
+        ["ElvUIParent"] = Private.SUPPORTED_ANCHORS["ElvUIParent"],
+        ["ElvUF_Player"] = Private.SUPPORTED_ANCHORS["ElvUF_Player"],
+        ["ElvUF_Target"] = Private.SUPPORTED_ANCHORS["ElvUF_Target"],
+        ["ElvUF_Focus"] = Private.SUPPORTED_ANCHORS["ElvUF_Focus"],
+        ["ElvUF_FocusTarget"] = Private.SUPPORTED_ANCHORS["ElvUF_FocusTarget"],
+        ["ElvUF_Pet"] = Private.SUPPORTED_ANCHORS["ElvUF_Pet"]
     },
     ["ElvUF_FocusMover"] = {
-        ["EssentialCooldownViewer"] = SUPPORTED_ANCHORS["EssentialCooldownViewer"],
-        ["UtilityCooldownViewer"] = SUPPORTED_ANCHORS["UtilityCooldownViewer"],
-        ["BuffIconCooldownViewer"] = SUPPORTED_ANCHORS["BuffIconCooldownViewer"],
-        ["ElvUIParent"] = SUPPORTED_ANCHORS["ElvUIParent"],
-        ["ElvUF_Player"] = SUPPORTED_ANCHORS["ElvUF_Player"],
-        ["ElvUF_Target"] = SUPPORTED_ANCHORS["ElvUF_Target"],
-        ["ElvUF_TargetTarget"] = SUPPORTED_ANCHORS["ElvUF_TargetTarget"],
-        ["ElvUF_FocusTarget"] = SUPPORTED_ANCHORS["ElvUF_FocusTarget"],
-        ["ElvUF_Pet"] = SUPPORTED_ANCHORS["ElvUF_Pet"]
+        ["EssentialCooldownViewer"] = Private.SUPPORTED_ANCHORS["EssentialCooldownViewer"],
+        ["UtilityCooldownViewer"] = Private.SUPPORTED_ANCHORS["UtilityCooldownViewer"],
+        ["BuffIconCooldownViewer"] = Private.SUPPORTED_ANCHORS["BuffIconCooldownViewer"],
+        ["ElvUIParent"] = Private.SUPPORTED_ANCHORS["ElvUIParent"],
+        ["ElvUF_Player"] = Private.SUPPORTED_ANCHORS["ElvUF_Player"],
+        ["ElvUF_Target"] = Private.SUPPORTED_ANCHORS["ElvUF_Target"],
+        ["ElvUF_TargetTarget"] = Private.SUPPORTED_ANCHORS["ElvUF_TargetTarget"],
+        ["ElvUF_FocusTarget"] = Private.SUPPORTED_ANCHORS["ElvUF_FocusTarget"],
+        ["ElvUF_Pet"] = Private.SUPPORTED_ANCHORS["ElvUF_Pet"]
     },
     ["ElvUF_FocusCastbarMover"] = {
-        ["EssentialCooldownViewer"] = SUPPORTED_ANCHORS["EssentialCooldownViewer"],
-        ["UtilityCooldownViewer"] = SUPPORTED_ANCHORS["UtilityCooldownViewer"],
-        ["BuffIconCooldownViewer"] = SUPPORTED_ANCHORS["BuffIconCooldownViewer"],
-        ["ElvUIParent"] = SUPPORTED_ANCHORS["ElvUIParent"],
-        ["ElvUF_Player"] = SUPPORTED_ANCHORS["ElvUF_Player"],
-        ["ElvUF_Target"] = SUPPORTED_ANCHORS["ElvUF_Target"],
-        ["ElvUF_TargetTarget"] = SUPPORTED_ANCHORS["ElvUF_TargetTarget"],
-        ["ElvUF_FocusTarget"] = SUPPORTED_ANCHORS["ElvUF_FocusTarget"],
-        ["ElvUF_Pet"] = SUPPORTED_ANCHORS["ElvUF_Pet"]
+        ["EssentialCooldownViewer"] = Private.SUPPORTED_ANCHORS["EssentialCooldownViewer"],
+        ["UtilityCooldownViewer"] = Private.SUPPORTED_ANCHORS["UtilityCooldownViewer"],
+        ["BuffIconCooldownViewer"] = Private.SUPPORTED_ANCHORS["BuffIconCooldownViewer"],
+        ["ElvUIParent"] = Private.SUPPORTED_ANCHORS["ElvUIParent"],
+        ["ElvUF_Player"] = Private.SUPPORTED_ANCHORS["ElvUF_Player"],
+        ["ElvUF_Target"] = Private.SUPPORTED_ANCHORS["ElvUF_Target"],
+        ["ElvUF_TargetTarget"] = Private.SUPPORTED_ANCHORS["ElvUF_TargetTarget"],
+        ["ElvUF_FocusTarget"] = Private.SUPPORTED_ANCHORS["ElvUF_FocusTarget"],
+        ["ElvUF_Pet"] = Private.SUPPORTED_ANCHORS["ElvUF_Pet"]
     },
     ["ElvUF_FocusTargetMover"] = {
-        ["EssentialCooldownViewer"] = SUPPORTED_ANCHORS["EssentialCooldownViewer"],
-        ["UtilityCooldownViewer"] = SUPPORTED_ANCHORS["UtilityCooldownViewer"],
-        ["BuffIconCooldownViewer"] = SUPPORTED_ANCHORS["BuffIconCooldownViewer"],
-        ["ElvUIParent"] = SUPPORTED_ANCHORS["ElvUIParent"],
-        ["ElvUF_Player"] = SUPPORTED_ANCHORS["ElvUF_Player"],
-        ["ElvUF_Target"] = SUPPORTED_ANCHORS["ElvUF_Target"],
-        ["ElvUF_TargetTarget"] = SUPPORTED_ANCHORS["ElvUF_TargetTarget"],
-        ["ElvUF_Focus"] = SUPPORTED_ANCHORS["ElvUF_Focus"],
-        ["ElvUF_Pet"] = SUPPORTED_ANCHORS["ElvUF_Pet"]
+        ["EssentialCooldownViewer"] = Private.SUPPORTED_ANCHORS["EssentialCooldownViewer"],
+        ["UtilityCooldownViewer"] = Private.SUPPORTED_ANCHORS["UtilityCooldownViewer"],
+        ["BuffIconCooldownViewer"] = Private.SUPPORTED_ANCHORS["BuffIconCooldownViewer"],
+        ["ElvUIParent"] = Private.SUPPORTED_ANCHORS["ElvUIParent"],
+        ["ElvUF_Player"] = Private.SUPPORTED_ANCHORS["ElvUF_Player"],
+        ["ElvUF_Target"] = Private.SUPPORTED_ANCHORS["ElvUF_Target"],
+        ["ElvUF_TargetTarget"] = Private.SUPPORTED_ANCHORS["ElvUF_TargetTarget"],
+        ["ElvUF_Focus"] = Private.SUPPORTED_ANCHORS["ElvUF_Focus"],
+        ["ElvUF_Pet"] = Private.SUPPORTED_ANCHORS["ElvUF_Pet"]
     },
     ["ElvUF_PetMover"] = {
-        ["EssentialCooldownViewer"] = SUPPORTED_ANCHORS["EssentialCooldownViewer"],
-        ["UtilityCooldownViewer"] = SUPPORTED_ANCHORS["UtilityCooldownViewer"],
-        ["BuffIconCooldownViewer"] = SUPPORTED_ANCHORS["BuffIconCooldownViewer"],
-        ["ElvUIParent"] = SUPPORTED_ANCHORS["ElvUIParent"],
-        ["ElvUF_Player"] = SUPPORTED_ANCHORS["ElvUF_Player"],
-        ["ElvUF_Target"] = SUPPORTED_ANCHORS["ElvUF_Target"],
-        ["ElvUF_TargetTarget"] = SUPPORTED_ANCHORS["ElvUF_TargetTarget"],
-        ["ElvUF_Focus"] = SUPPORTED_ANCHORS["ElvUF_Focus"],
-        ["ElvUF_FocusTarget"] = SUPPORTED_ANCHORS["ElvUF_FocusTarget"]
+        ["EssentialCooldownViewer"] = Private.SUPPORTED_ANCHORS["EssentialCooldownViewer"],
+        ["UtilityCooldownViewer"] = Private.SUPPORTED_ANCHORS["UtilityCooldownViewer"],
+        ["BuffIconCooldownViewer"] = Private.SUPPORTED_ANCHORS["BuffIconCooldownViewer"],
+        ["ElvUIParent"] = Private.SUPPORTED_ANCHORS["ElvUIParent"],
+        ["ElvUF_Player"] = Private.SUPPORTED_ANCHORS["ElvUF_Player"],
+        ["ElvUF_Target"] = Private.SUPPORTED_ANCHORS["ElvUF_Target"],
+        ["ElvUF_TargetTarget"] = Private.SUPPORTED_ANCHORS["ElvUF_TargetTarget"],
+        ["ElvUF_Focus"] = Private.SUPPORTED_ANCHORS["ElvUF_Focus"],
+        ["ElvUF_FocusTarget"] = Private.SUPPORTED_ANCHORS["ElvUF_FocusTarget"]
     }
 }
 
@@ -248,6 +248,41 @@ Private.ORDERED_ANCHORS = {
         "ElvUF_FocusTarget"
     }
 }
+
+function Private:RegisterAnchors(addOnName, anchorName, anchorDisplayName)
+    if C_AddOns.IsAddOnLoaded(addOnName) then
+        Private.SUPPORTED_ANCHORS[anchorName] = anchorDisplayName
+        Private.ANCHORS["ElvUF_PlayerMover"][anchorName] = Private.SUPPORTED_ANCHORS[anchorName]
+        Private.ANCHORS["ElvUF_PlayerCastbarMover"][anchorName] = Private.SUPPORTED_ANCHORS[anchorName]
+        Private.ANCHORS["ElvUF_TargetMover"][anchorName] = Private.SUPPORTED_ANCHORS[anchorName]
+        Private.ANCHORS["ElvUF_TargetCastbarMover"][anchorName] = Private.SUPPORTED_ANCHORS[anchorName]
+        Private.ANCHORS["ElvUF_TargetTargetMover"][anchorName] = Private.SUPPORTED_ANCHORS[anchorName]
+        Private.ANCHORS["ElvUF_FocusMover"][anchorName] = Private.SUPPORTED_ANCHORS[anchorName]
+        Private.ANCHORS["ElvUF_FocusCastbarMover"][anchorName] = Private.SUPPORTED_ANCHORS[anchorName]
+        Private.ANCHORS["ElvUF_FocusTargetMover"][anchorName] = Private.SUPPORTED_ANCHORS[anchorName]
+        Private.ANCHORS["ElvUF_PetMover"][anchorName] = Private.SUPPORTED_ANCHORS[anchorName]
+        Private.ORDERED_ANCHORS["ElvUF_PlayerMover"][#Private.ORDERED_ANCHORS["ElvUF_PlayerMover"] + 1] = anchorName
+        Private.ORDERED_ANCHORS["ElvUF_PlayerCastbarMover"][#Private.ORDERED_ANCHORS["ElvUF_PlayerCastbarMover"] + 1] = anchorName
+        Private.ORDERED_ANCHORS["ElvUF_TargetMover"][#Private.ORDERED_ANCHORS["ElvUF_TargetMover"] + 1] = anchorName
+        Private.ORDERED_ANCHORS["ElvUF_TargetCastbarMover"][#Private.ORDERED_ANCHORS["ElvUF_TargetCastbarMover"] + 1] = anchorName
+        Private.ORDERED_ANCHORS["ElvUF_TargetTargetMover"][#Private.ORDERED_ANCHORS["ElvUF_TargetTargetMover"] + 1] = anchorName
+        Private.ORDERED_ANCHORS["ElvUF_FocusMover"][#Private.ORDERED_ANCHORS["ElvUF_FocusMover"] + 1] = anchorName
+        Private.ORDERED_ANCHORS["ElvUF_FocusCastbarMover"][#Private.ORDERED_ANCHORS["ElvUF_FocusCastbarMover"] + 1] = anchorName
+        Private.ORDERED_ANCHORS["ElvUF_FocusTargetMover"][#Private.ORDERED_ANCHORS["ElvUF_FocusTargetMover"] + 1] = anchorName
+        Private.ORDERED_ANCHORS["ElvUF_PetMover"][#Private.ORDERED_ANCHORS["ElvUF_PetMover"] + 1] = anchorName
+    end
+end
+
+function Private:LoadSCMAnchors()
+    if not SCMAPI then return end
+    local SCMAnchors = SCMAPI.FetchAnchors()
+    local anchorName = "|cFF4080FFSCM|r: Group Anchor"
+    for anchorIndex in pairs(SCMAnchors) do
+        if anchorIndex > 100 then anchorName = "|cFF8080FFGlobal|r |cFF4080FFSCM|r: Group Anchor" end
+        if anchorIndex > 200 then anchorName = "|cFF8080FFGlobal|r |cFF4080FFSCM|r: Group Anchor" end
+        Private:RegisterAnchors("SkironCooldownManager", "SCM_GroupAnchor_" .. anchorIndex, "|A:icon_cooldownmanager:16:16|a " .. anchorName .. " #" .. anchorIndex)
+    end
+end
 
 local Defaults = {
     global = {
