@@ -17,6 +17,4 @@ function AddOn:OnEnable()
     EventFrame:SetScript("OnEvent", function(_, event, ...) if event == "PLAYER_ENTERING_WORLD" or event == "PLAYER_SPECIALIZATION_CHANGED" then Private:SetAllMovers() end end)
 
     hooksecurefunc(Private.E, "ToggleMovers", function() Private:SetAllMovers() end)
-
-    C_Timer.After(1, function() Private:LoadSCMAnchors() end)
 end

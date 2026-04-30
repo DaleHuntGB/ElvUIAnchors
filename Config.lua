@@ -38,7 +38,12 @@ local function BuildFrameLayoutSection(FrameDB, MoverName, GroupNameFunc, TabOrd
     Section.args.LayoutHeader = ACH:Header("Anchoring", 2)
 
     Section.args.AnchorFrom = ACH:Select("Anchor From", nil, 3, Private.ANCHOR_POINTS, nil, "full", function() return FrameDB.Layout[1] end, function(_, value) FrameDB.Layout[1] = value UpdateLayout() end, IsDisabled)
-    Section.args.Anchors = ACH:Select("Anchors", nil, 4, Private.ANCHORS[MoverName], nil, "full", function() return FrameDB.Layout[2] end, function(_, value) FrameDB.Layout[2] = value if ACR then ACR:NotifyChange("ElvUI") end UpdateLayout() end, IsDisabled )
+    Section.args.Anchors = ACH:Select("Anchors", nil, 4, function()
+        local anchors = Private.ANCHORS[MoverName]
+        local currentValue = FrameDB.Layout[2]
+        if currentValue and currentValue ~= "" and not anchors[currentValue] then local temporaryTable = {} for customAnchor, anchorProperties in pairs(anchors) do temporaryTable[customAnchor] = anchorProperties end temporaryTable[currentValue] = "Custom Anchor" return temporaryTable end
+        return anchors
+    end, nil, "full", function() return FrameDB.Layout[2] end, function(_, value) FrameDB.Layout[2] = value if ACR then ACR:NotifyChange("ElvUI") end UpdateLayout() end, IsDisabled )
     Section.args.Anchors.sorting = function() return Private.ORDERED_ANCHORS[MoverName] end
     Section.args.AnchorParent = ACH:Input("Anchor Parent", nil, 5, nil, "full", function() return FrameDB.Layout[2] end, function(_, value) FrameDB.Layout[2] = value UpdateLayout() end, IsDisabled)
     Section.args.AnchorTo = ACH:Select("Anchor To", nil, 6, Private.ANCHOR_POINTS, nil, "full", function() return FrameDB.Layout[3] end, function(_, value) FrameDB.Layout[3] = value UpdateLayout() end, IsDisabled)

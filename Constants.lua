@@ -249,41 +249,6 @@ Private.ORDERED_ANCHORS = {
     }
 }
 
-function Private:RegisterAnchors(addOnName, anchorName, anchorDisplayName)
-    if C_AddOns.IsAddOnLoaded(addOnName) then
-        Private.SUPPORTED_ANCHORS[anchorName] = anchorDisplayName
-        Private.ANCHORS["ElvUF_PlayerMover"][anchorName] = Private.SUPPORTED_ANCHORS[anchorName]
-        Private.ANCHORS["ElvUF_PlayerCastbarMover"][anchorName] = Private.SUPPORTED_ANCHORS[anchorName]
-        Private.ANCHORS["ElvUF_TargetMover"][anchorName] = Private.SUPPORTED_ANCHORS[anchorName]
-        Private.ANCHORS["ElvUF_TargetCastbarMover"][anchorName] = Private.SUPPORTED_ANCHORS[anchorName]
-        Private.ANCHORS["ElvUF_TargetTargetMover"][anchorName] = Private.SUPPORTED_ANCHORS[anchorName]
-        Private.ANCHORS["ElvUF_FocusMover"][anchorName] = Private.SUPPORTED_ANCHORS[anchorName]
-        Private.ANCHORS["ElvUF_FocusCastbarMover"][anchorName] = Private.SUPPORTED_ANCHORS[anchorName]
-        Private.ANCHORS["ElvUF_FocusTargetMover"][anchorName] = Private.SUPPORTED_ANCHORS[anchorName]
-        Private.ANCHORS["ElvUF_PetMover"][anchorName] = Private.SUPPORTED_ANCHORS[anchorName]
-        Private.ORDERED_ANCHORS["ElvUF_PlayerMover"][#Private.ORDERED_ANCHORS["ElvUF_PlayerMover"] + 1] = anchorName
-        Private.ORDERED_ANCHORS["ElvUF_PlayerCastbarMover"][#Private.ORDERED_ANCHORS["ElvUF_PlayerCastbarMover"] + 1] = anchorName
-        Private.ORDERED_ANCHORS["ElvUF_TargetMover"][#Private.ORDERED_ANCHORS["ElvUF_TargetMover"] + 1] = anchorName
-        Private.ORDERED_ANCHORS["ElvUF_TargetCastbarMover"][#Private.ORDERED_ANCHORS["ElvUF_TargetCastbarMover"] + 1] = anchorName
-        Private.ORDERED_ANCHORS["ElvUF_TargetTargetMover"][#Private.ORDERED_ANCHORS["ElvUF_TargetTargetMover"] + 1] = anchorName
-        Private.ORDERED_ANCHORS["ElvUF_FocusMover"][#Private.ORDERED_ANCHORS["ElvUF_FocusMover"] + 1] = anchorName
-        Private.ORDERED_ANCHORS["ElvUF_FocusCastbarMover"][#Private.ORDERED_ANCHORS["ElvUF_FocusCastbarMover"] + 1] = anchorName
-        Private.ORDERED_ANCHORS["ElvUF_FocusTargetMover"][#Private.ORDERED_ANCHORS["ElvUF_FocusTargetMover"] + 1] = anchorName
-        Private.ORDERED_ANCHORS["ElvUF_PetMover"][#Private.ORDERED_ANCHORS["ElvUF_PetMover"] + 1] = anchorName
-    end
-end
-
-function Private:LoadSCMAnchors()
-    if not SCMAPI then return end
-    local SCMAnchors = SCMAPI.FetchAnchors()
-    local anchorName = "|cFF4080FFSCM|r: Group Anchor"
-    for anchorIndex in pairs(SCMAnchors) do
-        if anchorIndex > 100 then anchorName = "|cFF8080FFGlobal|r |cFF4080FFSCM|r: Group Anchor" end
-        if anchorIndex > 200 then anchorName = "|cFF8080FFGlobal|r |cFF4080FFSCM|r: Group Anchor" end
-        Private:RegisterAnchors("SkironCooldownManager", "SCM_GroupAnchor_" .. anchorIndex, "|A:icon_cooldownmanager:16:16|a " .. anchorName .. " #" .. anchorIndex)
-    end
-end
-
 local Defaults = {
     global = {
         Player = {
