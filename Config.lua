@@ -54,7 +54,7 @@ local function BuildFrameLayoutSection(FrameDB, MoverName, GroupNameFunc, TabOrd
 end
 
 function Private:SetupConfig()
-	Private.Config = ACH:Group(format("%s", Private.ADDON_NAME), nil, 20, "tree")
+	Private.Config = ACH:Group(format("%s", "|cFF8080FFEnhanced|r |cFFFFFFFFAnchors|r"), nil, 20, "tree")
 
     Private.Config.args.Description = ACH:Description(Private.ADDON_NAME .. " is not affiliated with |cff1784d1ElvUI|r.\n\n" .. Private.ADDON_NAME .. " will update the |cff1784d1ElvUI|r movers and save these to the same profile as your current |cff1784d1ElvUI|r Profile.\n\n|cFF8080FFElements|r that are coloured |cFFCCCCCCGREY|r are disabled in |cff1784d1ElvUI|r.\n\n", 0)
 
