@@ -12,6 +12,7 @@ local GroupNameToElvUIName = {
     ["Focus Cast Bar"] = "focus",
     ["Focus Target"] = "focustarget",
     ["Pet"] = "pet",
+    ["Private Auras"] = "privateauras"
 }
 
 local function ReturnElementState(GroupName, isCastBar)

@@ -366,20 +366,11 @@ end
 function Private:IsElementEnabled(element, isCastBar)
     local ElementDB = Private.E.db.unitframe.units
     local CastBarDB = ElementDB[element] and ElementDB[element].castbar
+    local PrivateAurasDB = Private.E.db.general.privateAuras
 
-    if isCastBar then
-        if CastBarDB and CastBarDB.enable then
-            return true
-        else
-            return false
-        end
-    else
-        if ElementDB[element] and ElementDB[element].enable then
-            return true
-        else
-            return false
-        end
-    end
+    if isCastBar then if CastBarDB and CastBarDB.enable then return true else return false end
+    elseif element == "privateauras" then if PrivateAurasDB and PrivateAurasDB.enable then return true else return false end
+    else if ElementDB[element] and ElementDB[element].enable then return true else return false end end
 end
 
 Private.E.PopupDialogs.ANCHOR_CONFLICT = {
