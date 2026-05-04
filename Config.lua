@@ -3,15 +3,15 @@ local ACH = Private.ACH
 local ACR = Private.ACR
 
 local GroupNameToElvUIName = {
-    ["Player Frame"] = "player",
+    ["Player"] = "player",
     ["Player Cast Bar"] = "player",
-    ["Target Frame"] = "target",
+    ["Target"] = "target",
     ["Target Cast Bar"] = "target",
-    ["Target of Target Frame"] = "targettarget",
-    ["Focus Frame"] = "focus",
+    ["Target of Target"] = "targettarget",
+    ["Focus"] = "focus",
     ["Focus Cast Bar"] = "focus",
     ["Focus Target"] = "focustarget",
-    ["Pet Frame"] = "pet"
+    ["Pet"] = "pet"
 }
 
 local function ReturnElementState(GroupName, isCastBar)
@@ -58,15 +58,15 @@ function Private:SetupConfig()
 
     Private.Config.args.Description = ACH:Description(Private.ADDON_NAME .. " is not affiliated with |cff1784d1ElvUI|r.\n\n" .. Private.ADDON_NAME .. " will update the |cff1784d1ElvUI|r movers and save these to the same profile as your current |cff1784d1ElvUI|r Profile.\n\n|cFF8080FFElements|r that are coloured |cFFCCCCCCGREY|r are disabled in |cff1784d1ElvUI|r.\n\n", 0)
 
-    Private.Config.args.Player = BuildFrameLayoutSection(Private.DB.global.Player, "ElvUF_PlayerMover", function() return ReturnElementState("Player Frame", false) end, 1)
+    Private.Config.args.Player = BuildFrameLayoutSection(Private.DB.global.Player, "ElvUF_PlayerMover", function() return ReturnElementState("Player", false) end, 1)
     Private.Config.args.PlayerCastBar = BuildFrameLayoutSection(Private.DB.global.PlayerCastBar, "ElvUF_PlayerCastbarMover", function() return ReturnElementState("Player Cast Bar", true) end, 2)
-    Private.Config.args.Target = BuildFrameLayoutSection(Private.DB.global.Target, "ElvUF_TargetMover", function() return ReturnElementState("Target Frame", false) end, 3)
+    Private.Config.args.Target = BuildFrameLayoutSection(Private.DB.global.Target, "ElvUF_TargetMover", function() return ReturnElementState("Target", false) end, 3)
     Private.Config.args.TargetCastBar = BuildFrameLayoutSection(Private.DB.global.TargetCastBar, "ElvUF_TargetCastbarMover", function() return ReturnElementState("Target Cast Bar", true) end, 4)
-    Private.Config.args.TargetTarget = BuildFrameLayoutSection(Private.DB.global.TargetTarget, "ElvUF_TargetTargetMover", function() return ReturnElementState("Target of Target Frame", false) end, 5)
-    Private.Config.args.Focus = BuildFrameLayoutSection(Private.DB.global.Focus, "ElvUF_FocusMover", function() return ReturnElementState("Focus Frame", false) end, 6)
+    Private.Config.args.TargetTarget = BuildFrameLayoutSection(Private.DB.global.TargetTarget, "ElvUF_TargetTargetMover", function() return ReturnElementState("Target of Target", false) end, 5)
+    Private.Config.args.Focus = BuildFrameLayoutSection(Private.DB.global.Focus, "ElvUF_FocusMover", function() return ReturnElementState("Focus", false) end, 6)
     Private.Config.args.FocusCastBar = BuildFrameLayoutSection(Private.DB.global.FocusCastBar, "ElvUF_FocusCastbarMover", function() return ReturnElementState("Focus Cast Bar", true) end, 7)
     Private.Config.args.FocusTarget = BuildFrameLayoutSection(Private.DB.global.FocusTarget, "ElvUF_FocusTargetMover", function() return ReturnElementState("Focus Target", false) end, 8)
-    Private.Config.args.Pet = BuildFrameLayoutSection(Private.DB.global.Pet, "ElvUF_PetMover", function() return ReturnElementState("Pet Frame", false) end, 9)
+    Private.Config.args.Pet = BuildFrameLayoutSection(Private.DB.global.Pet, "ElvUF_PetMover", function() return ReturnElementState("Pet", false) end, 9)
 
     if Private.E then
         Private.E.Options.args.ElvUIAnchors = Private.Config
