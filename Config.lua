@@ -11,7 +11,7 @@ local GroupNameToElvUIName = {
     ["Focus"] = "focus",
     ["Focus Cast Bar"] = "focus",
     ["Focus Target"] = "focustarget",
-    ["Pet"] = "pet"
+    ["Pet"] = "pet",
 }
 
 local function ReturnElementState(GroupName, isCastBar)
@@ -67,6 +67,7 @@ function Private:SetupConfig()
     Private.Config.args.FocusCastBar = BuildFrameLayoutSection(Private.DB.global.FocusCastBar, "ElvUF_FocusCastbarMover", function() return ReturnElementState("Focus Cast Bar", true) end, 7)
     Private.Config.args.FocusTarget = BuildFrameLayoutSection(Private.DB.global.FocusTarget, "ElvUF_FocusTargetMover", function() return ReturnElementState("Focus Target", false) end, 8)
     Private.Config.args.Pet = BuildFrameLayoutSection(Private.DB.global.Pet, "ElvUF_PetMover", function() return ReturnElementState("Pet", false) end, 9)
+    Private.Config.args.PrivateAuras = BuildFrameLayoutSection(Private.DB.global.PrivateAuras, "PrivateAurasMover", function() return ReturnElementState("Private Auras", false) end, 10)
 
     if Private.E then
         Private.E.Options.args.ElvUIAnchors = Private.Config

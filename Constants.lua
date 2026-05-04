@@ -25,7 +25,8 @@ Private.MOVERS = {
     ["ElvUF_FocusMover"] = "Focus",
     ["ElvUF_FocusCastbarMover"] = "FocusCastBar",
     ["ElvUF_FocusTargetMover"] = "FocusTarget",
-    ["ElvUF_PetMover"] = "Pet"
+    ["ElvUF_PetMover"] = "Pet",
+    ["PrivateAurasMover"] = "PrivateAuras"
 }
 
 Private.SUPPORTED_ANCHORS = {
@@ -142,7 +143,19 @@ Private.ANCHORS = {
         ["ElvUF_TargetTarget"] = Private.SUPPORTED_ANCHORS["ElvUF_TargetTarget"],
         ["ElvUF_Focus"] = Private.SUPPORTED_ANCHORS["ElvUF_Focus"],
         ["ElvUF_FocusTarget"] = Private.SUPPORTED_ANCHORS["ElvUF_FocusTarget"]
-    }
+    },
+    ["PrivateAurasMover"] = {
+        ["EssentialCooldownViewer"] = Private.SUPPORTED_ANCHORS["EssentialCooldownViewer"],
+        ["UtilityCooldownViewer"] = Private.SUPPORTED_ANCHORS["UtilityCooldownViewer"],
+        ["BuffIconCooldownViewer"] = Private.SUPPORTED_ANCHORS["BuffIconCooldownViewer"],
+        ["ElvUIParent"] = Private.SUPPORTED_ANCHORS["ElvUIParent"],
+        ["ElvUF_Player"] = Private.SUPPORTED_ANCHORS["ElvUF_Player"],
+        ["ElvUF_Target"] = Private.SUPPORTED_ANCHORS["ElvUF_Target"],
+        ["ElvUF_TargetTarget"] = Private.SUPPORTED_ANCHORS["ElvUF_TargetTarget"],
+        ["ElvUF_Focus"] = Private.SUPPORTED_ANCHORS["ElvUF_Focus"],
+        ["ElvUF_FocusTarget"] = Private.SUPPORTED_ANCHORS["ElvUF_FocusTarget"],
+        ["ElvUF_Pet"] = Private.SUPPORTED_ANCHORS["ElvUF_Pet"]
+},
 }
 
 Private.ORDERED_ANCHORS = {
@@ -246,7 +259,19 @@ Private.ORDERED_ANCHORS = {
         "ElvUF_TargetTarget",
         "ElvUF_Focus",
         "ElvUF_FocusTarget"
-    }
+    },
+    ["PrivateAurasMover"] = {
+        "EssentialCooldownViewer",
+        "UtilityCooldownViewer",
+        "BuffIconCooldownViewer",
+        "ElvUIParent",
+        "ElvUF_Player",
+        "ElvUF_Target",
+        "ElvUF_TargetTarget",
+        "ElvUF_Focus",
+        "ElvUF_FocusTarget",
+        "ElvUF_Pet"
+    },
 }
 
 local Defaults = {
@@ -284,6 +309,10 @@ local Defaults = {
             Layout = {"CENTER", "ElvUIParent", "CENTER", 0, 0}
         },
         Pet = {
+            Enabled = false,
+            Layout = {"CENTER", "ElvUIParent", "CENTER", 0, 0}
+        },
+        PrivateAuras = {
             Enabled = false,
             Layout = {"CENTER", "ElvUIParent", "CENTER", 0, 0}
         }
@@ -326,6 +355,7 @@ function Private:SetAllMovers()
     Private:SetMover(Private.DB.global.FocusCastBar.Enabled, "ElvUF_FocusCastbarMover", table.concat(Private.DB.global.FocusCastBar.Layout, ","))
     Private:SetMover(Private.DB.global.FocusTarget.Enabled, "ElvUF_FocusTargetMover", table.concat(Private.DB.global.FocusTarget.Layout, ","))
     Private:SetMover(Private.DB.global.Pet.Enabled, "ElvUF_PetMover", table.concat(Private.DB.global.Pet.Layout, ","))
+    Private:SetMover(Private.DB.global.PrivateAuras.Enabled, "PrivateAurasMover", table.concat(Private.DB.global.PrivateAuras.Layout, ","))
     Private.E:LoadMovers()
 end
 
