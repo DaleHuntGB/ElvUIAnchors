@@ -45,6 +45,8 @@ function Private:SetupConfig()
     Private.Config.args.ActionBar2 = BuildFrameLayoutSection(Private.DB.global.ActionBar2, "ElvAB_2", "Action Bar 2", 12)
     Private.Config.args.ActionBar3 = BuildFrameLayoutSection(Private.DB.global.ActionBar3, "ElvAB_3", "Action Bar 3", 13)
     Private.Config.args.ActionBar4 = BuildFrameLayoutSection(Private.DB.global.ActionBar4, "ElvAB_4", "Action Bar 4", 14)
+    Private.Config.args.ActionBar5 = BuildFrameLayoutSection(Private.DB.global.ActionBar5, "ElvAB_5", "Action Bar 5", 15)
+    Private.Config.args.ActionBar6 = BuildFrameLayoutSection(Private.DB.global.ActionBar6, "ElvAB_6", "Action Bar 6", 16)
 
     if Private.E then
         Private.E.Options.args.ElvUIAnchors = Private.Config

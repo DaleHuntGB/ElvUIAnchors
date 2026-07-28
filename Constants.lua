@@ -91,6 +91,14 @@ local Defaults = {
             Enabled = false,
             Layout = {"CENTER", "ElvUIParent", "CENTER", 0, 0}
         },
+        ActionBar5 = {
+            Enabled = false,
+            Layout = {"CENTER", "ElvUIParent", "CENTER", 0, 0}
+        },
+        ActionBar6 = {
+            Enabled = false,
+            Layout = {"CENTER", "ElvUIParent", "CENTER", 0, 0}
+        },
     }
 }
 
