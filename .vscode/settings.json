@@ -23,5 +23,13 @@
         "Settings",
         "NORMAL_FONT_COLOR_CODE",
         "FONT_COLOR_CODE_CLOSE"
-    ]
+    ],
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true
+    },
+    "hide-files.files": []
 }
