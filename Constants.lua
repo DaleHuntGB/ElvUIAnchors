@@ -139,10 +139,9 @@ function Private:SetAllMovers()
     Private:SetMover(Private.DB.global.FocusTarget.Enabled, "ElvUF_FocusTargetMover", table.concat(Private.DB.global.FocusTarget.Layout, ","))
     Private:SetMover(Private.DB.global.Pet.Enabled, "ElvUF_PetMover", table.concat(Private.DB.global.Pet.Layout, ","))
     Private:SetMover(Private.DB.global.PrivateAuras.Enabled, "PrivateAurasMover", table.concat(Private.DB.global.PrivateAuras.Layout, ","))
-    Private:SetMover(Private.DB.global.ActionBar1.Enabled, "ElvAB_1", table.concat(Private.DB.global.ActionBar1.Layout, ","))
-    Private:SetMover(Private.DB.global.ActionBar2.Enabled, "ElvAB_2", table.concat(Private.DB.global.ActionBar2.Layout, ","))
-    Private:SetMover(Private.DB.global.ActionBar3.Enabled, "ElvAB_3", table.concat(Private.DB.global.ActionBar3.Layout, ","))
-    Private:SetMover(Private.DB.global.ActionBar4.Enabled, "ElvAB_4", table.concat(Private.DB.global.ActionBar4.Layout, ","))
+    for i = 1, 6 do
+        Private:SetMover(Private.DB.global["ActionBar" .. i].Enabled, "ElvAB_" .. i, table.concat(Private.DB.global["ActionBar" .. i].Layout, ","))
+    end
     Private.E:LoadMovers()
 end
 

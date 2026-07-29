@@ -29,7 +29,7 @@ end
 function Private:SetupConfig()
 	Private.Config = ACH:Group(format("%s", "|cFF8080FFEnhanced|r |cFFFFFFFFAnchors|r"), nil, 20, "tree")
 
-    Private.Config.args.Description = ACH:Description(Private.ADDON_NAME .. " is not affiliated with |cff1784d1ElvUI|r.\n\n" .. Private.ADDON_NAME .. " will update the |cff1784d1ElvUI|r movers and save these to the same profile as your current |cff1784d1ElvUI|r Profile.\n\n|cFF8080FFElements|r that are coloured |cFFCCCCCCGREY|r are disabled in |cff1784d1ElvUI|r.\n\n", 0)
+    Private.Config.args.Description = ACH:Description(Private.ADDON_NAME .. " is not affiliated with |cff1784d1ElvUI|r.\n\n" .. Private.ADDON_NAME .. " will update the |cff1784d1ElvUI|r movers and save these to the same profile as your current |cff1784d1ElvUI|r Profile.\n\n", 0)
 
     Private.Config.args.Player = BuildFrameLayoutSection(Private.DB.global.Player, "ElvUF_PlayerMover", "Player", 1)
     Private.Config.args.PlayerCastBar = BuildFrameLayoutSection(Private.DB.global.PlayerCastBar, "ElvUF_PlayerCastbarMover", "Player Cast Bar", 2)
