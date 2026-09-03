@@ -71,10 +71,6 @@ local Defaults = {
             Enabled = false,
             Layout = {"CENTER", "ElvUIParent", "CENTER", 0, 0}
         },
-        PrivateAuras = {
-            Enabled = false,
-            Layout = {"CENTER", "ElvUIParent", "CENTER", 0, 0}
-        },
         ActionBar1 = {
             Enabled = false,
             Layout = {"CENTER", "ElvUIParent", "CENTER", 0, 0}
@@ -96,6 +92,34 @@ local Defaults = {
             Layout = {"CENTER", "ElvUIParent", "CENTER", 0, 0}
         },
         ActionBar6 = {
+            Enabled = false,
+            Layout = {"CENTER", "ElvUIParent", "CENTER", 0, 0}
+        },
+        ActionBar7 = {
+            Enabled = false,
+            Layout = {"CENTER", "ElvUIParent", "CENTER", 0, 0}
+        },
+        ActionBar8 = {
+            Enabled = false,
+            Layout = {"CENTER", "ElvUIParent", "CENTER", 0, 0}
+        },
+        ActionBar9 = {
+            Enabled = false,
+            Layout = {"CENTER", "ElvUIParent", "CENTER", 0, 0}
+        },
+        ActionBar10 = {
+            Enabled = false,
+            Layout = {"CENTER", "ElvUIParent", "CENTER", 0, 0}
+        },
+        ActionBar13 = {
+            Enabled = false,
+            Layout = {"CENTER", "ElvUIParent", "CENTER", 0, 0}
+        },
+        ActionBar14 = {
+            Enabled = false,
+            Layout = {"CENTER", "ElvUIParent", "CENTER", 0, 0}
+        },
+        ActionBar15 = {
             Enabled = false,
             Layout = {"CENTER", "ElvUIParent", "CENTER", 0, 0}
         },
@@ -138,25 +162,15 @@ function Private:SetAllMovers()
     Private:SetMover(Private.DB.global.FocusCastBar.Enabled, "ElvUF_FocusCastbarMover", table.concat(Private.DB.global.FocusCastBar.Layout, ","))
     Private:SetMover(Private.DB.global.FocusTarget.Enabled, "ElvUF_FocusTargetMover", table.concat(Private.DB.global.FocusTarget.Layout, ","))
     Private:SetMover(Private.DB.global.Pet.Enabled, "ElvUF_PetMover", table.concat(Private.DB.global.Pet.Layout, ","))
-    Private:SetMover(Private.DB.global.PrivateAuras.Enabled, "PrivateAurasMover", table.concat(Private.DB.global.PrivateAuras.Layout, ","))
-    for i = 1, 6 do
-        Private:SetMover(Private.DB.global["ActionBar" .. i].Enabled, "ElvAB_" .. i, table.concat(Private.DB.global["ActionBar" .. i].Layout, ","))
-    end
+    for i = 1, 10 do Private:SetMover(Private.DB.global["ActionBar" .. i].Enabled, "ElvAB_" .. i, table.concat(Private.DB.global["ActionBar" .. i].Layout, ",")) end
+    Private:SetMover(Private.DB.global["ActionBar" .. 13].Enabled, "ElvAB_" .. 13, table.concat(Private.DB.global["ActionBar" .. 13].Layout, ","))
+    Private:SetMover(Private.DB.global["ActionBar" .. 14].Enabled, "ElvAB_" .. 14, table.concat(Private.DB.global["ActionBar" .. 14].Layout, ","))
+    Private:SetMover(Private.DB.global["ActionBar" .. 15].Enabled, "ElvAB_" .. 15, table.concat(Private.DB.global["ActionBar" .. 15].Layout, ","))
     Private.E:LoadMovers()
 end
 
 function Private:PrettyPrint(MSG)
     print(Private.ADDON_NAME .. ": " .. MSG)
-end
-
-function Private:IsElementEnabled(element, isCastBar)
-    local ElementDB = Private.E.db.unitframe.units
-    local CastBarDB = ElementDB[element] and ElementDB[element].castbar
-    local PrivateAurasDB = Private.E.db.general.privateAuras
-
-    if isCastBar then if CastBarDB and CastBarDB.enable then return true else return false end
-    elseif element == "privateauras" then if PrivateAurasDB and PrivateAurasDB.enable then return true else return false end
-    else if ElementDB[element] and ElementDB[element].enable then return true else return false end end
 end
 
 Private.E.PopupDialogs.ANCHOR_CONFLICT = {
