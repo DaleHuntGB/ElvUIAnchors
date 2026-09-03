@@ -2,8 +2,9 @@ local Private = select(2, ...)
 local ACH = Private.ACH
 local ACR = Private.ACR
 
-local function BuildFrameLayoutSection(FrameDB, MoverName, GroupName, TabOrder)
+local function BuildFrameLayoutSection(FrameDB, MoverName, GroupName, TabOrder, Inline)
     local Section = ACH:Group(GroupName, nil, TabOrder, nil)
+    Section.inline = Inline
     local function IsDisabled() return not FrameDB.Enabled end
 
     local function UpdateLayout()
@@ -31,15 +32,17 @@ function Private:SetupConfig()
 
     Private.Config.args.Description = ACH:Description(Private.ADDON_NAME .. " is not affiliated with |cff1784d1ElvUI|r.\n\n" .. Private.ADDON_NAME .. " will update the |cff1784d1ElvUI|r movers and save these to the same profile as your current |cff1784d1ElvUI|r Profile.\n\n", 0)
 
-    Private.Config.args.Player = BuildFrameLayoutSection(Private.DB.global.Player, "ElvUF_PlayerMover", "Player", 1)
-    Private.Config.args.PlayerCastBar = BuildFrameLayoutSection(Private.DB.global.PlayerCastBar, "ElvUF_PlayerCastbarMover", "Player Cast Bar", 2)
-    Private.Config.args.Target = BuildFrameLayoutSection(Private.DB.global.Target, "ElvUF_TargetMover", "Target", 3)
-    Private.Config.args.TargetCastBar = BuildFrameLayoutSection(Private.DB.global.TargetCastBar, "ElvUF_TargetCastbarMover", "Target Cast Bar", 4)
-    Private.Config.args.TargetTarget = BuildFrameLayoutSection(Private.DB.global.TargetTarget, "ElvUF_TargetTargetMover", "Target of Target", 5)
-    Private.Config.args.Focus = BuildFrameLayoutSection(Private.DB.global.Focus, "ElvUF_FocusMover", "Focus", 6)
-    Private.Config.args.FocusCastBar = BuildFrameLayoutSection(Private.DB.global.FocusCastBar, "ElvUF_FocusCastbarMover", "Focus Cast Bar", 7)
-    Private.Config.args.FocusTarget = BuildFrameLayoutSection(Private.DB.global.FocusTarget, "ElvUF_FocusTargetMover", "Focus Target", 8)
-    Private.Config.args.Pet = BuildFrameLayoutSection(Private.DB.global.Pet, "ElvUF_PetMover", "Pet", 9)
+    Private.Config.args.UnitFrames = ACH:Group("Unit Frames", nil, 1, "tab")
+
+    Private.Config.args.UnitFrames.args.Player = BuildFrameLayoutSection(Private.DB.global.Player, "ElvUF_PlayerMover", "Player", 1)
+    Private.Config.args.UnitFrames.args.Player.args.PlayerCastBar = BuildFrameLayoutSection(Private.DB.global.PlayerCastBar, "ElvUF_PlayerCastbarMover", "Player Cast Bar", 9, true)
+    Private.Config.args.UnitFrames.args.Target = BuildFrameLayoutSection(Private.DB.global.Target, "ElvUF_TargetMover", "Target", 3)
+    Private.Config.args.UnitFrames.args.Target.args.TargetCastBar = BuildFrameLayoutSection(Private.DB.global.TargetCastBar, "ElvUF_TargetCastbarMover", "Target Cast Bar", 9, true)
+    Private.Config.args.UnitFrames.args.TargetTarget = BuildFrameLayoutSection(Private.DB.global.TargetTarget, "ElvUF_TargetTargetMover", "Target of Target", 5)
+    Private.Config.args.UnitFrames.args.Focus = BuildFrameLayoutSection(Private.DB.global.Focus, "ElvUF_FocusMover", "Focus", 6)
+    Private.Config.args.UnitFrames.args.Focus.args.FocusCastBar = BuildFrameLayoutSection(Private.DB.global.FocusCastBar, "ElvUF_FocusCastbarMover", "Focus Cast Bar", 9, true)
+    Private.Config.args.UnitFrames.args.FocusTarget = BuildFrameLayoutSection(Private.DB.global.FocusTarget, "ElvUF_FocusTargetMover", "Focus Target", 8)
+    Private.Config.args.UnitFrames.args.Pet = BuildFrameLayoutSection(Private.DB.global.Pet, "ElvUF_PetMover", "Pet", 9)
 
     Private.Config.args.ActionBars = ACH:Group("Action Bars", nil, 10, "tab")
     Private.Config.args.ActionBars.args.ActionBar1 = BuildFrameLayoutSection(Private.DB.global.ActionBar1, "ElvAB_1", "Action Bar 1", 11)
